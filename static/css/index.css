@@ -354,7 +354,7 @@ section{
   max-width: unset;
   width: 100vw;
   height: 255px;
-  background-image: url(img/adult-business-computer-contemporary-380769.jpg);
+  /* background-image: url(img/adult-business-computer-contemporary-380769.jpg); */
   background-size: cover;
   background-position: center;
   display: grid;
