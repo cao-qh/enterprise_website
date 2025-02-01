@@ -1,3 +1,17 @@
 from django.shortcuts import render
+from news.models import News
+
 
 # Create your views here.
+def news_list(request):
+    news_list = News.objects.all()
+    print(news_list)
+    return render(request, "list.html", {"news_list": news_list})
+
+
+def detail(request, id):
+    try:
+        news = News.objects.get(pk=id)
+        return render(request, "detail.html", {"news": news})
+    except:
+        return render(request, "404.html")
