@@ -11,7 +11,7 @@
  Target Server Version : 80041
  File Encoding         : 65001
 
- Date: 31/01/2025 23:45:06
+ Date: 01/02/2025 22:19:49
 */
 
 SET NAMES utf8mb4;
@@ -238,6 +238,8 @@ INSERT INTO `django_admin_log` VALUES (22, '2025-01-31 15:41:40.469588', '1', '�
 INSERT INTO `django_admin_log` VALUES (23, '2025-01-31 15:42:27.248107', '2', '网站建设中常见的五大问题', 1, '[{\"added\": {}}]', 10, 1);
 INSERT INTO `django_admin_log` VALUES (24, '2025-01-31 15:43:05.302046', '3', '人物设计的方法', 1, '[{\"added\": {}}]', 10, 1);
 INSERT INTO `django_admin_log` VALUES (25, '2025-01-31 15:44:30.849028', '4', '一栈科技', 1, '[{\"added\": {}}]', 10, 1);
+INSERT INTO `django_admin_log` VALUES (26, '2025-02-01 12:41:16.477978', '5', 'SEO常用专业术语', 1, '[{\"added\": {}}]', 10, 1);
+INSERT INTO `django_admin_log` VALUES (27, '2025-02-01 13:04:48.395342', '5', 'SEO常用专业术语', 2, '[{\"changed\": {\"fields\": [\"\\u5c01\\u9762\"]}}]', 10, 1);
 
 -- ----------------------------
 -- Table structure for django_content_type
@@ -303,6 +305,7 @@ INSERT INTO `django_migrations` VALUES (20, 'slide', '0002_alter_slide_table', '
 INSERT INTO `django_migrations` VALUES (21, 'team', '0001_initial', '2025-01-31 09:27:17.230211');
 INSERT INTO `django_migrations` VALUES (22, 'news', '0001_initial', '2025-01-31 14:45:03.258255');
 INSERT INTO `django_migrations` VALUES (23, 'team', '0002_alter_team_avatar', '2025-01-31 14:45:03.264238');
+INSERT INTO `django_migrations` VALUES (24, 'news', '0002_alter_news_content', '2025-02-01 12:28:20.735154');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -345,6 +348,7 @@ INSERT INTO `news` VALUES (1, '什么是Django', 'Django是一个开源的Web框
 INSERT INTO `news` VALUES (2, '网站建设中常见的五大问题', '网站建设过程中会遇到许多问题...', 'news/23.png', '2025-01-31 15:42:27.248107', '2025-01-31 15:42:27.248107', 1);
 INSERT INTO `news` VALUES (3, '人物设计的方法', '人物设计的方法...', 'news/19.png', '2025-01-31 15:43:05.302046', '2025-01-31 15:43:05.302046', 1);
 INSERT INTO `news` VALUES (4, '一栈科技', '焦作市软件开发公司，全站开发，AIGC', 'news/建筑设计3.png', '2025-01-31 15:44:30.848030', '2025-01-31 15:44:30.848030', 2);
+INSERT INTO `news` VALUES (5, 'SEO常用专业术语', '<table border=\"1\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px\">\r\n	<tbody>\r\n		<tr>\r\n			<td>SEOSEO</td>\r\n			<td>搜索引擎优化</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n		<tr>\r\n			<td>&nbsp;</td>\r\n			<td>&nbsp;</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p>常用的SEO专业术语有很多，今天我为大家收集整理了100个关于SEO的相关专业术语，希望大家能快速入门SEO：</p>\r\n\r\n<p><img alt=\"\" src=\"/media/upload/2025/02/01/4.jpg\" style=\"height:940px; width:940px\" /></p>', 'news/1657192458114.png', '2025-02-01 12:41:16.476980', '2025-02-01 13:04:48.393343', 1);
 
 -- ----------------------------
 -- Table structure for slide
@@ -376,7 +380,7 @@ CREATE TABLE `team`  (
   `title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `rank` int(0) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of team

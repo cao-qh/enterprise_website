@@ -121,36 +121,19 @@
       <!-- 筛选按钮 -->
       <div class="filter-btns">
         <button class="filter-btn active" data-filter="*">全部</button>
-        <button class="filter-btn" data-filter=".web">建筑设计</button>
-        <button class="filter-btn" data-filter=".mobile">人物设计</button>
-        <button class="filter-btn" data-filter=".science">场景设计</button>
+        <button class="filter-btn" data-filter=".category_2">企业集团</button>
+        <button class="filter-btn" data-filter=".category_3">移动金融</button>
+        <button class="filter-btn" data-filter=".category_4">设计建筑</button>
       </div>
       <!-- 筛选图片 -->
-      <div class="cases">
-        <div class="case-item web science">
-          <img src="{% static 'images/场景设计01.png' %}" alt="">
+      <div class="cases ">
+        {% for item in cases %}
+        <div class="case-item category_{{item.category_id}}">
+          <a href="/news/{{ item.id }}">
+            <img src="/media/{{item.cover}}" alt="">
+          </a>
         </div>
-        <div class="case-item web">
-          <img src="{% static 'images/人物设计01.png' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/建筑设计01.png' %}" alt="">
-        </div>
-        <div class="case-item web mobile">
-          <img src="{% static 'images/建筑设计02.png' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/人物设计02.png' %}" alt="">
-        </div>
-        <div class="case-item web science">
-          <img src="{% static 'images/建筑设计03.png' %}" alt="">
-        </div>
-        <div class="case-item science web mobile">
-          <img src="{% static 'images/场景设计02.png' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/建筑设计04.png' %}" alt="">
-        </div>
+        {% endfor %}
       </div>
     </section>
 
@@ -257,48 +240,28 @@
       <h2 class="title1">资讯中心</h2>
       <p class="intro">关注公司动态，获取一手信息</p>
       <div class="activities">
+        {% for item in news %}
         <div class="activity">
           <div class="act-image-wrapper">
-            <img src="{% static 'images/23.png' %}" alt="">
+            <img src="media/{{item.cover}}" alt="">
           </div>
           <div class="meta">
             <p class="date-published">
-              <i class="fa fa-calendar"></i> 2090年3月5日
+              <i class="fa fa-calendar"></i> {{item.created_at}}
             </p>
-            <p class="comments"><i class="fa fa-comments"></i> 29条评论</p>
           </div>
-          <h2 class="act-title">网站建设中常见的五大问题</h2>
-          <article>网站建设过程中会遇到许多问题...</article>
-          <button class="readmore-btn">阅读更多</button>
+          <h2 class="act-title">{{ item.title }}</h2>
+          <article>{{item.content|slice:'20'}}...</article>
+          <a href="/news/{{item.id}}">
+            <button class="readmore-btn">阅读更多</button>
+          </a>
         </div>
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'images/19.png' %}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2090年2月18日
-            </p>
-            <p class="comments"><i class="fa fa-comments"></i> 65条评论</p>
-          </div>
-          <h2 class="act-title">人物设计的方法</h2>
-          <article>人物设计的方法...</article>
-          <button class="readmore-btn">阅读更多</button>
-        </div>
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'images/21.png' %}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2090年2月8日
-            </p>
-            <p class="comments"><i class="fa fa-comments"></i> 45条评论</p>
-          </div>
-          <h2 class="act-title">什么是Django</h2>
-          <article>Django是一个开源的Web框架，使用Python语言编写...</article>
-          <button class="readmore-btn">阅读更多</button>
-        </div>
+        {% endfor %}
+      </div>
+      <div>
+        <a href="/news/list">
+          <button class="readmore-btn">查看全部新闻</button>
+        </a>
       </div>
     </section>
   </div>
